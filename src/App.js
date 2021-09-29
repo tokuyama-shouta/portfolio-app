@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
-import Counter from './components/counter/Counter'
+//import Counter from './components/counter/Counter'
 //import InputForm from './components/InputForm'
+import ItemList from './components/itemList/ItemList';
 
 function App() {
   const [isDisplay,setIsDisplay] = useState(true);
@@ -14,8 +15,9 @@ function App() {
       <button onClick={() => handleDisplay()}>
         {isDisplay ? 'コンポーネントを非表示にします' : 'コンポーネント表示'}
       </button>
-      {isDisplay && <Counter/>}
+      {/* {isDisplay && <Counter/>} */}
       {/* <InputForm/> */}
+      <ItemList/>
     </div>
   );
 }
