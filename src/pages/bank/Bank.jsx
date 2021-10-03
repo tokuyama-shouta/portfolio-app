@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, {useReducer, useState} from 'react';
 import styles from './Bank.module.scss';
 
 const initialState = {
@@ -17,13 +17,14 @@ const reducer = (state,action) => {
 };
 
 function Bank() {
+  const [amount,setAmount] = useState(0);
   const [state,dispatch] = useReducer(reducer, initialState);
   return (
     <div>
       <h4>残高：{state.savings.toLocaleString()}円</h4>
       <div className={styles.operationArea}>
         <div>
-          <input/>
+          <input value={amount} onChange={(e)=>{setAmount(e.target.value)}}/>
           <span>円</span>
         </div>
         <div className={styles.buttons}>
