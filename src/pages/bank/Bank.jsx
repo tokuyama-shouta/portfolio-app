@@ -19,17 +19,20 @@ const reducer = (state,action) => {
 function Bank() {
   const [amount,setAmount] = useState(0);
   const [state,dispatch] = useReducer(reducer, initialState);
+
+  const onDeposit=(amount) => {dispatch({type: 'DEPOSIT', payload: amount})}
+  const onWithdraw=(amount) => {dispatch({type: 'WITHDRAW', payload: amount})}
   return (
     <div>
       <h4>残高：{state.savings.toLocaleString()}円</h4>
       <div className={styles.operationArea}>
         <div>
-          <input value={amount} onChange={(e)=>{setAmount(e.target.value)}}/>
+          <input value={amount} onChange={(e)=>{setAmount(e.target.value);}}/>
           <span>円</span>
         </div>
         <div className={styles.buttons}>
-          <button>預け入れ</button>
-          <button>引き出し</button>
+          <button onClick={() => onDeposit(amount)}>預け入れ</button>
+          <button onClick={() => onWithdraw(amount)}>引き出し</button>
         </div>
       </div>
     </div>
