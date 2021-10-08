@@ -32,7 +32,7 @@ function Bank() {
         </div>
         <div className={styles.buttons}>
           <button onClick={() => onDeposit(amount)}>預け入れ</button>
-          <button onClick={() => onWithdraw(amount)}>引き出</button>
+          <button onClick={() => onWithdraw(amount)}>引き</button>
         </div>
       </div>
     </div>
