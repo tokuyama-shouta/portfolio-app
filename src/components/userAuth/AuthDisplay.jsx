@@ -10,4 +10,6 @@ function AuthDisplay() {
   )
 }
 
+//職務経歴書作成
+
 export default AuthDisplay
